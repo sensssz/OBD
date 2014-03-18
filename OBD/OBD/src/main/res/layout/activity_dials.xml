@@ -11,18 +11,12 @@
         android:layout_centerInParent="true"
         android:contentDescription="@string/speed_dial_desc"/>
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:id="@+id/center"
-        android:layout_centerInParent="true"/>
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/speed_dial_pointer"
         android:src="@drawable/speed_pointer"
-        android:layout_toLeftOf="@+id/center"
-        android:layout_centerVertical="true"
-        android:contentDescription="@string/speed_dial_desc"/>
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/speed_pointer_desc"/>
 
 </RelativeLayout>
