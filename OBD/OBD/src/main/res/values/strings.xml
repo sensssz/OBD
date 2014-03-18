@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">OBD</string>
+    <string name="speed_dial_desc">Speed Dial</string>
+    <string name="speed_pointer_desc">Speed Dial</string>
 </resources>
