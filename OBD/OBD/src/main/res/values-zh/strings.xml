@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">OBD</string>
+    <string name="speed_dial_desc">速度仪表盘</string>
+    <string name="speed_pointer_desc">速度仪表盘指针</string>
+    <string name="first_view">仪表盘界面</string>
+    <string name="second_view">图表界面</string>
 </resources>
