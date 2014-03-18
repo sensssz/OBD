@@ -9,17 +9,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/first_view"
-        android:id="@+id/btn_firstView"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="137dp"
-        android:layout_alignLeft="@+id/btn_secondView"
-        android:layout_alignRight="@+id/btn_secondView"/>
+        android:id="@+id/firstViewButton"
+        android:layout_above="@+id/secondViewButton"
+        android:layout_marginBottom="68dp"
+        android:layout_alignRight="@+id/secondViewButton"
+        android:layout_alignEnd="@+id/secondViewButton"
+        android:layout_alignLeft="@+id/secondViewButton"
+        android:layout_alignStart="@+id/secondViewButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/second_view"
-        android:id="@+id/btn_secondView"
+        android:id="@+id/secondViewButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>

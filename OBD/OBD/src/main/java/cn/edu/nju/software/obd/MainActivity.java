@@ -15,10 +15,10 @@ public class MainActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btn_firstView = (Button)findViewById(R.id.btn_firstView);
-        Button btn_secondView = (Button)findViewById(R.id.btn_secondView);
+        Button firstViewButton = (Button)findViewById(R.id.firstViewButton);
+        Button secondViewButton = (Button)findViewById(R.id.secondViewButton);
 
-        btn_firstView.setOnClickListener(new View.OnClickListener() {
+        firstViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
@@ -26,7 +26,7 @@ public class MainActivity extends Activity{
                 MainActivity.this.startActivity(intent);
             }
         });
-        btn_secondView.setOnClickListener(new View.OnClickListener() {
+        secondViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
