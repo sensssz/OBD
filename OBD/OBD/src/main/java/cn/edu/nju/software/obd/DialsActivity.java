@@ -1,7 +1,9 @@
 package cn.edu.nju.software.obd;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -17,6 +19,11 @@ public class DialsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dials);
 
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         mSpeedDialPointer = (ImageView) findViewById(R.id.speed_dial_pointer);
         mSpeedDialPointer.post(new Runnable() {
             @Override
@@ -28,5 +35,15 @@ public class DialsActivity extends Activity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

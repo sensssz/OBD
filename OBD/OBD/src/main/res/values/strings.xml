@@ -2,4 +2,6 @@
     <string name="app_name">OBD</string>
     <string name="speed_dial_desc">Speed Dial</string>
     <string name="speed_pointer_desc">Speed Dial</string>
+    <string name="first_view">first view</string>
+    <string name="second_view">second view</string>
 </resources>
