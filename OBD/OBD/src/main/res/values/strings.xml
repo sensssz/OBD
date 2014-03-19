@@ -9,6 +9,12 @@
     <string name="total_fuel_consumption">耗油总量</string>
     <string name="voltage_dial_desc">电压仪表盘</string>
     <string name="voltage_dial_pointer_desc">电压仪表盘指针</string>
+    <string name="rotate_speed_dial_desc">发动机转速仪表盘</string>
+    <string name="rotate_speed_dial_pointer_desc">发动机转速仪表盘指针</string>
+    <string name="temperature_dial_desc">温度仪表盘</string>
+    <string name="temperature_dial_pointer_desc">温度仪表盘指针</string>
+    <string name="pressure_dial_desc">气压仪表盘</string>
+    <string name="pressure_dial_pointer_desc">气压仪表盘指针</string>
     <string name="voltage">电瓶电压</string>
     <string name="rotate_speed">发动机转速</string>
     <string name="temperature">冷却液温度</string>

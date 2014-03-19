@@ -16,6 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <RelativeLayout
@@ -48,15 +49,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:contentDescription="@string/voltage_dial_desc"
-                    android:src="@drawable/voltage_dial"/>
+                    android:contentDescription="@string/rotate_speed_dial_desc"
+                    android:src="@drawable/rotate_speed_dial"/>
 
                 <ImageView
+                    android:id="@+id/rotate_speed_dial_pointer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:contentDescription="@string/voltage_dial_pointer_desc"
-                    android:src="@drawable/voltage_dial_pointer"/>
+                    android:contentDescription="@string/rotate_speed_dial_pointer_desc"
+                    android:src="@drawable/rotate_speed_dial_pointer"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -68,15 +70,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:contentDescription="@string/voltage_dial_desc"
-                    android:src="@drawable/voltage_dial"/>
+                    android:contentDescription="@string/temperature_dial_desc"
+                    android:src="@drawable/temperature_dial"/>
 
                 <ImageView
+                    android:id="@+id/temperature_dial_pointer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:contentDescription="@string/voltage_dial_pointer_desc"
-                    android:src="@drawable/voltage_dial_pointer"/>
+                    android:contentDescription="@string/temperature_dial_pointer_desc"
+                    android:src="@drawable/temperature_dial_pointer"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -88,15 +91,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:contentDescription="@string/voltage_dial_desc"
-                    android:src="@drawable/voltage_dial"/>
+                    android:contentDescription="@string/pressure_dial_desc"
+                    android:src="@drawable/pressure_dial"/>
 
                 <ImageView
+                    android:id="@+id/pressure_dial_pointer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:contentDescription="@string/voltage_dial_pointer_desc"
-                    android:src="@drawable/voltage_dial_pointer"/>
+                    android:contentDescription="@string/pressure_dial_pointer_desc"
+                    android:src="@drawable/pressure_dial_pointer"/>
             </RelativeLayout>
 
         </LinearLayout>
@@ -170,7 +174,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="℃ 94.0"
+                    android:text="94.0 ℃"
                     android:textColor="@android:color/white"
                     android:textSize="17sp"/>
             </LinearLayout>
