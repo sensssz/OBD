@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">OBD</string>
-    <string name="speed_dial_desc">Speed Dial</string>
-    <string name="speed_pointer_desc">Speed Dial Pointer</string>
-    <string name="first_view">Dials view</string>
-    <string name="second_view">Charts view</string>
-    <string name="average_fuel_consumption">Average fuel consumption</string>
-    <string name="odo">ODO</string>
-    <string name="total_fuel_consumption">Total fuel consumption</string>
+    <string name="speed_dial_desc">速度仪表盘</string>
+    <string name="speed_pointer_desc">速度仪表盘指针</string>
+    <string name="first_view">仪表盘界面</string>
+    <string name="second_view">图表界面</string>
+    <string name="average_fuel_consumption">平均油耗</string>
+    <string name="odo">总里程</string>
+    <string name="total_fuel_consumption">耗油总量</string>
+    <string name="voltage_dial_desc">电压仪表盘</string>
+    <string name="voltage_dial_pointer_desc">电压仪表盘指针</string>
+    <string name="voltage">电瓶电压</string>
+    <string name="rotate_speed">发动机转速</string>
+    <string name="temperature">冷却液温度</string>
+    <string name="pressure">压力数据</string>
 </resources>
