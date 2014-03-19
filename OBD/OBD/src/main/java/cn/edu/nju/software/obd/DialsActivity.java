@@ -68,62 +68,32 @@ public class DialsActivity extends Activity {
         mVoltageDialPointer.post(new Runnable() {
             @Override
             public void run() {
-                RotateAnimation rotateAnimation = new RotateAnimation(0.0f, VOLTAGE_MAX_ANGLE,
-                        Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 1.0f);
-                rotateAnimation.setInterpolator(DialsActivity.this, android.R.anim.accelerate_decelerate_interpolator);
-                rotateAnimation.setDuration(1000);
-                rotateAnimation.setFillEnabled(true);
-                rotateAnimation.setFillAfter(true);
-                mVoltageDialPointer.startAnimation(rotateAnimation);
-            }
+				rotateVoltagePointer(VOLTAGE_MAX_VALUE);
+			}
         });
         mRotateSpeedDialPointer.post(new Runnable() {
             @Override
             public void run() {
-                RotateAnimation rotateAnimation = new RotateAnimation(0.0f, ROTATE_SPEED_MAX_ANGLE,
-                        Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                rotateAnimation.setInterpolator(DialsActivity.this, android.R.anim.accelerate_decelerate_interpolator);
-                rotateAnimation.setDuration(1000);
-                rotateAnimation.setFillEnabled(true);
-                rotateAnimation.setFillAfter(true);
-                mRotateSpeedDialPointer.startAnimation(rotateAnimation);
-            }
+				rotateRotateSpeedPointer(ROTATE_SPEED_MAX_VALUE);
+			}
         });
         mTemperatureDialPointer.post(new Runnable() {
             @Override
             public void run() {
-                RotateAnimation rotateAnimation = new RotateAnimation(0.0f, TEMPERATURE_MAX_ANGLE,
-                        Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 1.0f);
-                rotateAnimation.setInterpolator(DialsActivity.this, android.R.anim.accelerate_decelerate_interpolator);
-                rotateAnimation.setDuration(1000);
-                rotateAnimation.setFillEnabled(true);
-                rotateAnimation.setFillAfter(true);
-                mTemperatureDialPointer.startAnimation(rotateAnimation);
-            }
+				rotateTemperaturePointer(TEMPERATURE_MAX_VALUE);
+			}
         });
         mPressureDialPointer.post(new Runnable() {
             @Override
             public void run() {
-                RotateAnimation rotateAnimation = new RotateAnimation(0.0f, PRESSURE_MAX_ANGLE,
-                        Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                rotateAnimation.setInterpolator(DialsActivity.this, android.R.anim.accelerate_decelerate_interpolator);
-                rotateAnimation.setDuration(1000);
-                rotateAnimation.setFillEnabled(true);
-                rotateAnimation.setFillAfter(true);
-                mPressureDialPointer.startAnimation(rotateAnimation);
-            }
+				rotatePressurePointer(PRESSURE_MAX_VALUE);
+			}
         });
         mSpeedDialPointer.post(new Runnable() {
             @Override
             public void run() {
-                RotateAnimation rotateAnimation = new RotateAnimation(0.0f, SPEED_MAX_ANGLE,
-                        Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                rotateAnimation.setInterpolator(DialsActivity.this, android.R.anim.accelerate_decelerate_interpolator);
-                rotateAnimation.setDuration(1000);
-                rotateAnimation.setFillEnabled(true);
-                rotateAnimation.setFillAfter(true);
-                mSpeedDialPointer.startAnimation(rotateAnimation);
-            }
+				rotateSpeedPointer(SPEED_MAX_VALUE);
+			}
         });
     }
 
@@ -160,7 +130,8 @@ public class DialsActivity extends Activity {
         } else if (currentValue < minValue) {
             currentValue = minValue;
         }
-        float toDegree = currentValue * degreePerValue;
+		currentValue -= minValue;
+		float toDegree = currentValue * degreePerValue;
         if (fromDegree != toDegree) {
             pointer.startAnimation(getRotateAnimation(fromDegree, toDegree, pivotY));
         }
