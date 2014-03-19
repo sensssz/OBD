@@ -29,7 +29,9 @@ public class MainActivity extends Activity{
         secondViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, StatisticsChartActivity.class);
+                MainActivity.this.startActivity(intent);
             }
         });
     }
