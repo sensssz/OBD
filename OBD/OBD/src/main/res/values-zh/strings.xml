@@ -4,4 +4,7 @@
     <string name="speed_pointer_desc">速度仪表盘指针</string>
     <string name="first_view">仪表盘界面</string>
     <string name="second_view">图表界面</string>
+    <string name="average_fuel_consumption">平均油耗</string>
+    <string name="odo">总里程</string>
+    <string name="total_fuel_consumption">耗油总量</string>
 </resources>

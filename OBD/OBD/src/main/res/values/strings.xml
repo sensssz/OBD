@@ -4,4 +4,7 @@
     <string name="speed_pointer_desc">Speed Dial Pointer</string>
     <string name="first_view">Dials view</string>
     <string name="second_view">Charts view</string>
+    <string name="average_fuel_consumption">Average fuel consumption</string>
+    <string name="odo">ODO</string>
+    <string name="total_fuel_consumption">Total fuel consumption</string>
 </resources>
