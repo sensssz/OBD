@@ -1,22 +1,24 @@
 package cn.edu.nju.software.obd;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import cn.jpush.android.api.InstrumentedActivity;
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * Displays two buttons
  */
-public class MainActivity extends Activity{
+public class MainActivity extends InstrumentedActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button firstViewButton = (Button)findViewById(R.id.firstViewButton);
-        Button secondViewButton = (Button)findViewById(R.id.secondViewButton);
+        Button firstViewButton = (Button) findViewById(R.id.firstViewButton);
+        Button secondViewButton = (Button) findViewById(R.id.secondViewButton);
 
         firstViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,15 @@ public class MainActivity extends Activity{
         });
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
+    }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        JPushInterface.onResume(this);
+    }
 }
