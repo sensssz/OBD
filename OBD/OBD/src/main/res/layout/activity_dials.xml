@@ -125,6 +125,7 @@
                     android:textSize="17sp"/>
 
                 <TextView
+                    android:id="@+id/voltage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -148,6 +149,7 @@
                     android:textSize="17sp"/>
 
                 <TextView
+                    android:id="@+id/rotate_speed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -171,6 +173,7 @@
                     android:textSize="17sp"/>
 
                 <TextView
+                    android:id="@+id/temperature"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -194,6 +197,7 @@
                     android:textSize="17sp"/>
 
                 <TextView
+                    android:id="@+id/pressure"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -270,6 +274,7 @@
                 android:background="#313D2A"/>
 
             <TextView
+                android:id="@+id/total_distance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -311,6 +316,7 @@
                 android:background="#313D2A"/>
 
             <TextView
+                android:id="@+id/average_fuel_consumption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -352,6 +358,7 @@
                 android:background="#313D2A"/>
 
             <TextView
+                android:id="@+id/total_fuel_consumption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"

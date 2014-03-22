@@ -1,4 +1,4 @@
-package cn.edu.nju.software.obd;
+package cn.edu.nju.software.obd.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import com.jjoe64.graphview.*;
+
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GraphViewSeries;
+import com.jjoe64.graphview.LineGraphView;
+
+import cn.edu.nju.software.obd.R;
 
 
 /**
@@ -18,8 +23,8 @@ public class ChartFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_chart, container, false);
 
 
-        GraphViewSeries exampleSeries = new GraphViewSeries(new GraphView.GraphViewData[] {
-                  new GraphView.GraphViewData(1, 3.5d)
+        GraphViewSeries exampleSeries = new GraphViewSeries(new GraphView.GraphViewData[]{
+                new GraphView.GraphViewData(1, 3.5d)
                 , new GraphView.GraphViewData(2, 4.5d)
                 , new GraphView.GraphViewData(3, 6.5d)
                 , new GraphView.GraphViewData(4, 7.0d)
@@ -39,9 +44,9 @@ public class ChartFragment extends Fragment {
         );
 
         graphView.addSeries(exampleSeries); // data
-        graphView.setHorizontalLabels(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"});
-        graphView.setHorizontalLabels(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"});
-        LinearLayout layout = (LinearLayout)view.findViewById(R.id.graph);
+        graphView.setHorizontalLabels(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"});
+        graphView.setHorizontalLabels(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"});
+        LinearLayout layout = (LinearLayout) view.findViewById(R.id.graph);
         layout.addView(graphView);
         return view;
     }

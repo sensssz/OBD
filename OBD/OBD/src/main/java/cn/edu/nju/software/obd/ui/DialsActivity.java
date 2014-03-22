@@ -1,4 +1,4 @@
-package cn.edu.nju.software.obd;
+package cn.edu.nju.software.obd.ui;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -7,6 +7,9 @@ import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import cn.edu.nju.software.obd.R;
 
 /**
  * Shows the current status of the car
@@ -43,6 +46,13 @@ public class DialsActivity extends Activity {
     private ImageView mTemperatureDialPointer;
     private ImageView mPressureDialPointer;
     private ImageView mSpeedDialPointer;
+    private TextView mVoltageText;
+    private TextView mRotateSpeedText;
+    private TextView mTemperatureText;
+    private TextView mPressureText;
+    private TextView mTotalDistanceText;
+    private TextView mAverageFuelConsumptionText;
+    private TextView mTotalFuelConsumptionText;
     private float mVoltageAngle;
     private float mRotateSpeedAngle;
     private float mTemperatureAngle;
@@ -64,6 +74,13 @@ public class DialsActivity extends Activity {
         mTemperatureDialPointer = (ImageView) findViewById(R.id.temperature_dial_pointer);
         mPressureDialPointer = (ImageView) findViewById(R.id.pressure_dial_pointer);
         mSpeedDialPointer = (ImageView) findViewById(R.id.speed_dial_pointer);
+        mVoltageText = (TextView) findViewById(R.id.voltage);
+        mRotateSpeedText = (TextView) findViewById(R.id.rotate_speed);
+        mTemperatureText = (TextView) findViewById(R.id.temperature);
+        mPressureText = (TextView) findViewById(R.id.pressure);
+        mTotalDistanceText = (TextView) findViewById(R.id.total_distance);
+        mAverageFuelConsumptionText = (TextView) findViewById(R.id.average_fuel_consumption);
+        mTotalFuelConsumptionText = (TextView) findViewById(R.id.total_fuel_consumption);
 
         mVoltageDialPointer.post(new Runnable() {
             @Override

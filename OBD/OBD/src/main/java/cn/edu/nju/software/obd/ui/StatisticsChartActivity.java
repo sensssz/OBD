@@ -1,4 +1,4 @@
-package cn.edu.nju.software.obd;
+package cn.edu.nju.software.obd.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
 import com.astuetz.PagerSlidingTabStrip;
+
+import cn.edu.nju.software.obd.R;
 
 public class StatisticsChartActivity extends FragmentActivity {
 
@@ -24,6 +26,16 @@ public class StatisticsChartActivity extends FragmentActivity {
 
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabs.setViewPager(pager);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private class SwipeChartAdapter extends FragmentPagerAdapter {
@@ -52,15 +64,6 @@ public class StatisticsChartActivity extends FragmentActivity {
         public String getPageTitle(int position) {
             return titles[position];
         }
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
 }

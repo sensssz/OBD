@@ -1,10 +1,11 @@
-package cn.edu.nju.software.obd;
+package cn.edu.nju.software.obd.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import cn.edu.nju.software.obd.R;
 import cn.jpush.android.api.InstrumentedActivity;
 import cn.jpush.android.api.JPushInterface;
 

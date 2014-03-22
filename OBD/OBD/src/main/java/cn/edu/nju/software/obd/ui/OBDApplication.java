@@ -1,4 +1,4 @@
-package cn.edu.nju.software.obd;
+package cn.edu.nju.software.obd.ui;
 
 import android.app.Application;
 
