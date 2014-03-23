@@ -4,9 +4,14 @@
     <string name="speed_pointer_desc">速度仪表盘指针</string>
     <string name="first_view">仪表盘界面</string>
     <string name="second_view">图表界面</string>
+
     <string name="average_fuel_consumption">平均油耗</string>
     <string name="odo">总里程</string>
     <string name="total_fuel_consumption">耗油总量</string>
+
+    <string name="average_speed">平均速度</string>
+    <string name="highest_water_temperature_of_engine">发动机最高水温</string>
+
     <string name="voltage_dial_desc">电压仪表盘</string>
     <string name="voltage_dial_pointer_desc">电压仪表盘指针</string>
     <string name="rotate_speed_dial_desc">发动机转速仪表盘</string>

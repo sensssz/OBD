@@ -46,8 +46,8 @@ public class StatisticsChartActivity extends FragmentActivity {
 
             titles = new String[]{
                     getString(R.string.average_fuel_consumption),
-                    getString(R.string.odo),
-                    getString(R.string.total_fuel_consumption)};
+                    getString(R.string.average_speed),
+                    getString(R.string.highest_water_temperature_of_engine)};
         }
 
         @Override
