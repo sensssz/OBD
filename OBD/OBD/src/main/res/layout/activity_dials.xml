@@ -108,6 +108,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -129,9 +130,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="14.0 V"
+                    android:text="@string/no_value"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="15sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -153,9 +154,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="1163 rpm"
+                    android:text="@string/no_value"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="15sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -177,9 +178,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="94.0 ℃"
+                    android:text="@string/no_value"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="15sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -201,9 +202,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="180 KPa"
+                    android:text="@string/no_value"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="15sp"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -246,6 +247,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/bottom"
         android:background="@drawable/text_info_background"
+        android:baselineAligned="false"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -283,9 +285,9 @@
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
-                android:text="88546 Km"
+                android:text="@string/no_value"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"/>
+                android:textSize="15sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -326,9 +328,9 @@
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
-                android:text="9.7 L/100Km"
+                android:text="@string/no_value"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"/>
+                android:textSize="15sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -367,9 +369,9 @@
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
-                android:text="1281.1 L"
+                android:text="@string/no_value"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"/>
+                android:textSize="15sp"/>
         </LinearLayout>
 
     </LinearLayout>

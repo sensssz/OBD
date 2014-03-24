@@ -3,6 +3,7 @@ package cn.edu.nju.software.obd.ui;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
@@ -10,11 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import cn.edu.nju.software.obd.R;
+import cn.edu.nju.software.obd.data.DataConfig;
+import cn.edu.nju.software.obd.data.DataMap;
+import cn.edu.nju.software.obd.data.DataType;
 
 /**
  * Shows the current status of the car
  */
 public class DialsActivity extends Activity {
+    private static final int ANIMATION_TIME = 600;
+
     private static final float VOLTAGE_MIN_VALUE = 9;
     private static final float VOLTAGE_MAX_VALUE = 16;
     private static final float VOLTAGE_MAX_ANGLE = 129.0f;
@@ -59,6 +65,8 @@ public class DialsActivity extends Activity {
     private float mPressureAngle;
     private float mSpeedAngle;
 
+    private DataMap.OnDataListener onDataListener;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,36 +90,114 @@ public class DialsActivity extends Activity {
         mAverageFuelConsumptionText = (TextView) findViewById(R.id.average_fuel_consumption);
         mTotalFuelConsumptionText = (TextView) findViewById(R.id.total_fuel_consumption);
 
-        mVoltageDialPointer.post(new Runnable() {
-            @Override
-            public void run() {
-				rotateVoltagePointer(VOLTAGE_MAX_VALUE);
-			}
-        });
-        mRotateSpeedDialPointer.post(new Runnable() {
-            @Override
-            public void run() {
-				rotateRotateSpeedPointer(ROTATE_SPEED_MAX_VALUE);
-			}
-        });
-        mTemperatureDialPointer.post(new Runnable() {
-            @Override
-            public void run() {
-				rotateTemperaturePointer(TEMPERATURE_MAX_VALUE);
-			}
-        });
-        mPressureDialPointer.post(new Runnable() {
-            @Override
-            public void run() {
-				rotatePressurePointer(PRESSURE_MAX_VALUE);
-			}
-        });
-        mSpeedDialPointer.post(new Runnable() {
-            @Override
-            public void run() {
-				rotateSpeedPointer(SPEED_MAX_VALUE);
-			}
-        });
+        init();
+    }
+
+    private void init() {
+        updateVoltage();
+        updateRotateSpeed();
+        updateTemperature();
+        updatePressure();
+        updateSpeed();
+        updateTotalDistance();
+        updateAverageFuelConsumption();
+        updateTotalFuelConsumption();
+    }
+
+    private void updateVoltage() {
+        final String voltage = DataMap.getInstance().getData(DataType.VOLTAGE);
+        if (voltage != null && voltage.length() > 0) {
+            mVoltageDialPointer.post(new Runnable() {
+                @Override
+                public void run() {
+                    updateVoltage(voltage);
+                }
+            });
+        }
+    }
+
+    private void updateRotateSpeed() {
+        final String rotateSpeed = DataMap.getInstance().getData(DataType.ROTATE_SPEED);
+        if (rotateSpeed != null && rotateSpeed.length() > 0) {
+            mRotateSpeedDialPointer.post(new Runnable() {
+                @Override
+                public void run() {
+                    updateRotateSpeed(rotateSpeed);
+                }
+            });
+        }
+    }
+
+    private void updateTemperature() {
+        final String temperature = DataMap.getInstance().getData(DataType.TEMPERATURE);
+        if (temperature != null && temperature.length() > 0) {
+            mTemperatureDialPointer.post(new Runnable() {
+                @Override
+                public void run() {
+                    updateTemperature(temperature);
+                }
+            });
+        }
+    }
+
+    private void updatePressure() {
+        final String pressure = DataMap.getInstance().getData(DataType.PRESSURE);
+        if (pressure != null && pressure.length() > 0) {
+            mPressureDialPointer.post(new Runnable() {
+                @Override
+                public void run() {
+                    updatePressure(pressure);
+                }
+            });
+        }
+    }
+
+    private void updateSpeed() {
+        final String speed = DataMap.getInstance().getData(DataType.SPEED);
+        if (speed != null && speed.length() > 0) {
+            mSpeedDialPointer.post(new Runnable() {
+                @Override
+                public void run() {
+                    updateSpeed(speed);
+                }
+            });
+        }
+    }
+
+    private void updateTotalDistance() {
+        final String totalDistance = DataMap.getInstance().getData(DataType.TOTAL_DISTANCE);
+        if (totalDistance != null && totalDistance.length() > 0) {
+            mTotalDistanceText.post(new Runnable() {
+                @Override
+                public void run() {
+                    mTotalDistanceText.setText(totalDistance);
+                }
+            });
+        }
+    }
+
+    private void updateAverageFuelConsumption() {
+        final String averageFuelConsumption = DataMap.getInstance().getData(DataType.AVERAGE_FUEL_CONSUMPTION);
+        if (averageFuelConsumption != null && averageFuelConsumption.length() > 0) {
+            mAverageFuelConsumptionText.post(new Runnable() {
+                @Override
+                public void run() {
+                    mAverageFuelConsumptionText.setText(averageFuelConsumption);
+                }
+            });
+        }
+    }
+
+    private void updateTotalFuelConsumption() {
+        final String totalFuelConsumption = DataMap.getInstance().getData(DataType.TOTAL_FUEL_CONSUMPTION);
+        if (totalFuelConsumption != null && totalFuelConsumption.length() > 0) {
+            mTotalFuelConsumptionText.post(new Runnable() {
+                @Override
+                public void run() {
+                    mTotalFuelConsumptionText.setText(totalFuelConsumption);
+                }
+            });
+        }
     }
 
     private void rotateVoltagePointer(float voltageValue) {
@@ -147,8 +233,8 @@ public class DialsActivity extends Activity {
         } else if (currentValue < minValue) {
             currentValue = minValue;
         }
-		currentValue -= minValue;
-		float toDegree = currentValue * degreePerValue;
+        currentValue -= minValue;
+        float toDegree = currentValue * degreePerValue;
         if (fromDegree != toDegree) {
             pointer.startAnimation(getRotateAnimation(fromDegree, toDegree, pivotY));
         }
@@ -159,7 +245,7 @@ public class DialsActivity extends Activity {
         RotateAnimation rotateAnimation = new RotateAnimation(fromDegree, toDegree,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, pivotY);
         rotateAnimation.setInterpolator(DialsActivity.this, android.R.anim.accelerate_decelerate_interpolator);
-        rotateAnimation.setDuration(1000);
+        rotateAnimation.setDuration(ANIMATION_TIME);
         rotateAnimation.setFillEnabled(true);
         rotateAnimation.setFillAfter(true);
         return rotateAnimation;
@@ -173,5 +259,104 @@ public class DialsActivity extends Activity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        onDataListener = new DataMap.OnDataListener() {
+            @Override
+            public void onDataReceived(String dataTypeName, String dataValue) {
+                Log.d("DataReceiver", "Type: " + dataTypeName);
+                Log.d("DataReceiver", "Value: " + dataValue);
+                DataType dataType = DataConfig.getTypeByName(dataTypeName);
+                if (dataType != null) {
+                    switch (dataType) {
+                        case VOLTAGE:
+                            updateVoltage(dataValue);
+                            return;
+
+                        case ROTATE_SPEED:
+                            updateRotateSpeed(dataValue);
+                            return;
+
+                        case TEMPERATURE:
+                            updateTemperature(dataValue);
+                            return;
+
+                        case PRESSURE:
+                            updatePressure(dataValue);
+                            return;
+
+                        case SPEED:
+                            updateSpeed(dataValue);
+                            return;
+
+                        case TOTAL_DISTANCE:
+                            mTotalDistanceText.setText(dataValue);
+                            return;
+
+                        case AVERAGE_FUEL_CONSUMPTION:
+                            mAverageFuelConsumptionText.setText(dataValue);
+                            return;
+
+                        case TOTAL_FUEL_CONSUMPTION:
+                            mTotalFuelConsumptionText.setText(dataValue);
+                            return;
+
+                        default:
+                            break;
+                    }
+                }
+            }
+        };
+        DataMap.getInstance().addOnDataListener(onDataListener);
+    }
+
+    private void updateVoltage(String voltageString) {
+        float voltage = DataMap.dataValueToInt(voltageString);
+        rotateVoltagePointer(voltage);
+        mVoltageText.setText(voltageString);
+    }
+
+    private void updateRotateSpeed(String rotateSpeedString) {
+        float rotateSpeed = DataMap.dataValueToInt(rotateSpeedString);
+        rotateRotateSpeedPointer(rotateSpeed);
+        mRotateSpeedText.setText(rotateSpeedString);
+    }
+
+    private void updateTemperature(String temperatureString) {
+        float temperature = DataMap.dataValueToInt(temperatureString);
+        rotateTemperaturePointer(temperature);
+        mTemperatureText.setText(temperatureString);
+    }
+
+    private void updatePressure(String pressureString) {
+        float pressure = DataMap.dataValueToInt(pressureString);
+        rotatePressurePointer(pressure);
+        mPressureText.setText(pressureString);
+    }
+
+    private void updateSpeed(String speedString) {
+        float speed = DataMap.dataValueToInt(speedString);
+        rotateSpeedPointer(speed);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (onDataListener != null) {
+            DataMap.getInstance().removeOnDataListener(onDataListener);
+            onDataListener = null;
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (onDataListener != null) {
+            DataMap.getInstance().removeOnDataListener(onDataListener);
+            onDataListener = null;
+        }
     }
 }
