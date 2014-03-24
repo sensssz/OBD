@@ -278,7 +278,7 @@
             <TextView
                 android:id="@+id/total_distance"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="2dp"
                 android:layout_marginLeft="2dp"
                 android:background="#232A20"
@@ -320,7 +320,7 @@
             <TextView
                 android:id="@+id/average_fuel_consumption"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="2dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
@@ -362,7 +362,7 @@
             <TextView
                 android:id="@+id/total_fuel_consumption"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="2dp"
                 android:layout_marginRight="2dp"
                 android:background="#232A20"

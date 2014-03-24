@@ -3,7 +3,6 @@ package cn.edu.nju.software.obd.ui;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
@@ -267,8 +266,6 @@ public class DialsActivity extends Activity {
         onDataListener = new DataMap.OnDataListener() {
             @Override
             public void onDataReceived(String dataTypeName, String dataValue) {
-                Log.d("DataReceiver", "Type: " + dataTypeName);
-                Log.d("DataReceiver", "Value: " + dataValue);
                 DataType dataType = DataConfig.getTypeByName(dataTypeName);
                 if (dataType != null) {
                     switch (dataType) {
