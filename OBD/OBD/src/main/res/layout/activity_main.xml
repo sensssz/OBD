@@ -24,4 +24,16 @@
         android:id="@+id/secondViewButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/third_view"
+        android:id="@+id/thirdViewButton"
+        android:layout_below="@+id/secondViewButton"
+        android:layout_marginTop="54dp"
+        android:layout_alignLeft="@+id/secondViewButton"
+        android:layout_alignStart="@+id/secondViewButton"
+        android:layout_alignRight="@+id/secondViewButton"
+        android:layout_alignEnd="@+id/secondViewButton" />
 </RelativeLayout>

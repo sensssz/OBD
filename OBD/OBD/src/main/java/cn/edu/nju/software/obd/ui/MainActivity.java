@@ -20,6 +20,7 @@ public class MainActivity extends InstrumentedActivity {
         setContentView(R.layout.activity_main);
         Button firstViewButton = (Button) findViewById(R.id.firstViewButton);
         Button secondViewButton = (Button) findViewById(R.id.secondViewButton);
+        Button thirdViewButton = (Button) findViewById(R.id.thirdViewButton);
 
         firstViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +35,14 @@ public class MainActivity extends InstrumentedActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, StatisticsChartActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        thirdViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, LoginActivity.class);
                 MainActivity.this.startActivity(intent);
             }
         });

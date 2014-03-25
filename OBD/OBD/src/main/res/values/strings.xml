@@ -1,17 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">OBD</string>
     <string name="speed_dial_desc">速度仪表盘</string>
     <string name="speed_pointer_desc">速度仪表盘指针</string>
     <string name="first_view">仪表盘界面</string>
     <string name="second_view">图表界面</string>
-
+    <string name="third_view">登陆界面</string>
     <string name="average_fuel_consumption">平均油耗</string>
     <string name="odo">总里程</string>
     <string name="total_fuel_consumption">耗油总量</string>
-
     <string name="average_speed">平均速度</string>
     <string name="highest_water_temperature_of_engine">发动机最高水温</string>
-
     <string name="voltage_dial_desc">电压仪表盘</string>
     <string name="voltage_dial_pointer_desc">电压仪表盘指针</string>
     <string name="rotate_speed_dial_desc">发动机转速仪表盘</string>
@@ -25,4 +25,11 @@
     <string name="temperature">冷却液温度</string>
     <string name="pressure">压力数据</string>
     <string name="no_value">--/--</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="sign_in">登陆</string>
+    <string name="title_activity_login">Login</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
 </resources>
