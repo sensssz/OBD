@@ -28,5 +28,6 @@
     <string name="username">用户名</string>
     <string name="password">密码</string>
     <string name="sign_in">登陆</string>
+    <string name="title_activity_login">登录</string>
 
 </resources>

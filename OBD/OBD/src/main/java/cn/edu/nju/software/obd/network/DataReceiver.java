@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-
 import cn.edu.nju.software.obd.data.DataMap;
 import cn.jpush.android.api.JPushInterface;
 
@@ -24,8 +23,8 @@ public class DataReceiver extends BroadcastReceiver
 		{
             if (bundle != null) {
                 String message = bundle.getString(JPushInterface.EXTRA_MESSAGE);
-                if (message != null && message.contains(":")) {
-                    Log.d(TAG, message);
+				Log.d(TAG, message);
+				if (message != null && message.contains(":")) {
                     String[] messageParts = message.split(":");
                     String dataType = messageParts[0];
                     String dataValue = messageParts[1];
