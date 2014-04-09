@@ -1,7 +1,6 @@
 package cn.edu.nju.software.obd.ui;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.animation.Animation;
@@ -13,11 +12,13 @@ import cn.edu.nju.software.obd.R;
 import cn.edu.nju.software.obd.data.DataConfig;
 import cn.edu.nju.software.obd.data.DataMap;
 import cn.edu.nju.software.obd.data.DataType;
+import cn.jpush.android.api.InstrumentedActivity;
+import cn.jpush.android.api.JPushInterface;
 
 /**
  * Shows the current status of the car
  */
-public class DialsActivity extends Activity {
+public class DialsActivity extends InstrumentedActivity {
     private static final int ANIMATION_TIME = 600;
 
     private static final float VOLTAGE_MIN_VALUE = 9;
@@ -263,6 +264,7 @@ public class DialsActivity extends Activity {
     @Override
     public void onResume() {
         super.onResume();
+        JPushInterface.onResume(this);
         onDataListener = new DataMap.OnDataListener() {
             @Override
             public void onDataReceived(String dataTypeName, String dataValue) {
@@ -342,6 +344,7 @@ public class DialsActivity extends Activity {
     @Override
     public void onPause() {
         super.onPause();
+        JPushInterface.onPause(this);
         if (onDataListener != null) {
             DataMap.getInstance().removeOnDataListener(onDataListener);
             onDataListener = null;
