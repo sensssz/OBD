@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="cn.edu.nju.software.obd" >
+<manifest
+    package="cn.edu.nju.software.obd"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Required -->
     <permission
@@ -48,6 +49,10 @@
             android:name=".ui.LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
+        <activity
+            android:name="cn.edu.nju.software.obd.ui.CarInfoActivity"
+            android:label="@string/car_info"
+            android:parentActivityName="cn.edu.nju.software.obd.ui.MainActivity"/>
 
         <receiver
             android:name="cn.edu.nju.software.obd.network.DataReceiver"
