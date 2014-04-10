@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/dummy_car_model"
+            android:text="@string/dummy_oil_saving"
             android:textSize="17sp"/>
 
         <View
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/dummy_licence_plate_number"
+            android:text="@string/dummy_fatigue_control"
             android:textSize="17sp"/>
 
         <View
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/dummy_owner_name"
+            android:text="@string/dummy_speed_habit"
             android:textSize="17sp"/>
 
         <View
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/dummy_obd_id"
+            android:text="@string/dummy_mileage"
             android:textSize="17sp"/>
 
         <View
@@ -132,7 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/dummy_obd_id"
+            android:text="@string/dummy_stability"
             android:textSize="17sp"/>
 
         <View
