@@ -4,9 +4,11 @@
     <string name="app_name">OBD</string>
     <string name="speed_dial_desc">速度仪表盘</string>
     <string name="speed_pointer_desc">速度仪表盘指针</string>
-    <string name="first_view">仪表盘界面</string>
-    <string name="second_view">图表界面</string>
-    <string name="third_view">登陆界面</string>
+    <string name="first_view">登陆界面</string>
+    <string name="second_view">仪表盘界面</string>
+    <string name="third_view">图标界面</string>
+    <string name="forth_view">车辆信息</string>
+    <string name="fifth_view">行车习惯</string>
     <string name="average_fuel_consumption">平均油耗</string>
     <string name="odo">总里程</string>
     <string name="total_fuel_consumption">耗油总量</string>
@@ -43,5 +45,7 @@
     <string name="dummy_licence_plate_number">XX XXXXX</string>
     <string name="dummy_owner_name">XXX</string>
     <string name="dummy_obd_id">01234567890123456789</string>
+
+
 
 </resources>

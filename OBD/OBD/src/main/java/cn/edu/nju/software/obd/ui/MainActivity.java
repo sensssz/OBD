@@ -21,12 +21,13 @@ public class MainActivity extends InstrumentedActivity {
         Button firstViewButton = (Button) findViewById(R.id.firstViewButton);
         Button secondViewButton = (Button) findViewById(R.id.secondViewButton);
         Button thirdViewButton = (Button) findViewById(R.id.thirdViewButton);
+        Button forthViewButton = (Button) findViewById(R.id.forthViewButton);
 
         firstViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, DialsActivity.class);
+                intent.setClass(MainActivity.this, LoginActivity.class);
                 MainActivity.this.startActivity(intent);
             }
         });
@@ -34,7 +35,7 @@ public class MainActivity extends InstrumentedActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, StatisticsChartActivity.class);
+                intent.setClass(MainActivity.this, DialsActivity.class);
                 MainActivity.this.startActivity(intent);
             }
         });
@@ -42,7 +43,16 @@ public class MainActivity extends InstrumentedActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, LoginActivity.class);
+                intent.setClass(MainActivity.this, StatisticsChartActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+
+        forthViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CarInfoActivity.class);
                 MainActivity.this.startActivity(intent);
             }
         });
