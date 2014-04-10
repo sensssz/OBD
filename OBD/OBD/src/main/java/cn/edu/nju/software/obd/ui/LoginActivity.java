@@ -1,6 +1,7 @@
 package cn.edu.nju.software.obd.ui;
 
-import android.app.Activity;
+import android.app.ActionBar;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -20,9 +21,10 @@ import java.util.List;
 import cn.edu.nju.software.obd.R;
 import cn.edu.nju.software.obd.network.HttpClient;
 import cn.edu.nju.software.obd.network.Url;
+import cn.jpush.android.api.InstrumentedActivity;
 import cn.jpush.android.api.JPushInterface;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends InstrumentedActivity {
     private EditText mUsernameEdit;
     private EditText mPasswordEdit;
 
@@ -32,6 +34,11 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            getActionBar().setTitle(getString(R.string.title_activity_login));
+        }
 
         mUsernameEdit = (EditText) findViewById(R.id.username);
         mPasswordEdit = (EditText) findViewById(R.id.password);
@@ -73,6 +80,8 @@ public class LoginActivity extends Activity {
                             if (results[0].equals("1")) {
                                 JPushInterface.setAlias(LoginActivity.this, results[1], null);
                                 showMessage(R.string.login_success);
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
                                 finish();
                             } else {
                                 showMessage(R.string.login_fail);
