@@ -8,6 +8,7 @@ package cn.edu.nju.software.obd.network;
  */
 public class Url
 {
-	public static final String URL = "http://112.124.47.134";
-	public static final int TIME_OUT = 20;
+    public static final String URL = "http://112.124.47.134/";
+    public static final String LOGIN_URL = URL + "OBDController/login.html";
+    public static final int TIME_OUT = 20;
 }

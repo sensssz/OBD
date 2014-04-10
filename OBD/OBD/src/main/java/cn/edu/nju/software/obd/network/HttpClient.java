@@ -32,84 +32,69 @@ import java.util.List;
  * Date: 1/23/14
  * Time: 3:28 PM
  */
-public class HttpClient
-{
-	private static HttpClient instance = new HttpClient();
+public class HttpClient {
+    private static HttpClient instance = new HttpClient();
 
-	DefaultHttpClient httpClient;
-	HttpContext localContext = new BasicHttpContext();
+    DefaultHttpClient httpClient;
+    HttpContext localContext = new BasicHttpContext();
 
-	public HttpClient()
-	{
-		BasicHttpParams params = new BasicHttpParams();
-		HttpConnectionParams.setConnectionTimeout(params, Url.TIME_OUT);
-		SchemeRegistry schemeRegistry = new SchemeRegistry();
-		schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-		final SSLSocketFactory sslSocketFactory = SSLSocketFactory.getSocketFactory();
-		schemeRegistry.register(new Scheme("https", sslSocketFactory, 443));
-		ClientConnectionManager cm = new ThreadSafeClientConnManager(params, schemeRegistry);
-		httpClient = new DefaultHttpClient(cm, params);
-	}
+    public HttpClient() {
+        BasicHttpParams params = new BasicHttpParams();
+        HttpConnectionParams.setConnectionTimeout(params, Url.TIME_OUT);
+        SchemeRegistry schemeRegistry = new SchemeRegistry();
+        schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
+        final SSLSocketFactory sslSocketFactory = SSLSocketFactory.getSocketFactory();
+        schemeRegistry.register(new Scheme("https", sslSocketFactory, 443));
+        ClientConnectionManager cm = new ThreadSafeClientConnManager(params, schemeRegistry);
+        httpClient = new DefaultHttpClient(cm, params);
+    }
 
-	public static HttpClient getInstance()
-	{
-		return instance;
-	}
+    public static HttpClient getInstance() {
+        return instance;
+    }
 
-	public String postPage(String url, List<NameValuePair> parameters) throws IOException
-	{
-		httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.RFC_2109);
-		HttpPost httpPost = new HttpPost(url);
-		httpPost.setHeader("Cookie", httpClient.getCookieStore().toString());
-		httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
-		httpPost.setEntity(new UrlEncodedFormEntity(parameters, HTTP.UTF_8));
-		HttpResponse httpResponse = httpClient.execute(httpPost, localContext);
-		return convertStreamToString(httpResponse.getEntity().getContent());
-	}
+    public String httpPost(String url, List<NameValuePair> parameters) throws IOException {
+        httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.RFC_2109);
+        HttpPost httpPost = new HttpPost(url);
+        httpPost.setHeader("Cookie", httpClient.getCookieStore().toString());
+        httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+        httpPost.setEntity(new UrlEncodedFormEntity(parameters, HTTP.UTF_8));
+        HttpResponse httpResponse = httpClient.execute(httpPost, localContext);
+        return convertStreamToString(httpResponse.getEntity().getContent());
+    }
 
-	public String httpGet(String url) throws IOException
-	{
-		httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.RFC_2109);
-		HttpGet httpGet = new HttpGet(url);
-		httpGet.setHeader("Cookie", httpClient.getCookieStore().toString());
-		HttpResponse httpResponse = httpClient.execute(httpGet, localContext);
-		return convertStreamToString(httpResponse.getEntity().getContent());
-	}
+    public String httpGet(String url) throws IOException {
+        httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.RFC_2109);
+        HttpGet httpGet = new HttpGet(url);
+        httpGet.setHeader("Cookie", httpClient.getCookieStore().toString());
+        HttpResponse httpResponse = httpClient.execute(httpGet, localContext);
+        return convertStreamToString(httpResponse.getEntity().getContent());
+    }
 
-	private String convertStreamToString(InputStream inputStream)
-	{
-	/*
-	 * To convert the InputStream to String we use the BufferedReader.readLine()
+    private String convertStreamToString(InputStream inputStream) {
+    /*
+     * To convert the InputStream to String we use the BufferedReader.readLine()
      * method. We iterate until the BufferedReader return null which means
      * there's no more data to read. Each line will appended to a StringBuilder
      * and returned as String.
      */
-		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-		StringBuilder stringBuilder = new StringBuilder();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        StringBuilder stringBuilder = new StringBuilder();
 
-		String line = null;
-		try
-		{
-			while ((line = reader.readLine()) != null)
-			{
-				stringBuilder.append(line).append("\n");
-			}
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-		finally
-		{
-			try
-			{
-				inputStream.close();
-			}
-			catch (IOException e)
-			{
-				e.printStackTrace();
-			}
-		}
-		return stringBuilder.toString();
-	}
+        String line = null;
+        try {
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return stringBuilder.toString();
+    }
 }
