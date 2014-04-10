@@ -47,6 +47,7 @@
     <string name="dummy_owner_name">XXX</string>
     <string name="dummy_obd_id">01234567890123456789</string>
 
+    <string name="car_habit">车辆习惯</string>
     <string name="oil_saving">节油</string>
     <string name="fatigue_control">疲劳控制</string>
     <string name="speed_habit">速度</string>

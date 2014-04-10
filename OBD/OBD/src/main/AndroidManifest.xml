@@ -53,6 +53,10 @@
             android:name="cn.edu.nju.software.obd.ui.CarInfoActivity"
             android:label="@string/car_info"
             android:parentActivityName="cn.edu.nju.software.obd.ui.MainActivity"/>
+        <activity
+            android:name=".ui.HabitActivity"
+            android:label="@string/car_habit"
+            android:parentActivityName="cn.edu.nju.software.obd.ui.MainActivity"/>
 
         <receiver
             android:name="cn.edu.nju.software.obd.network.DataReceiver"
