@@ -22,6 +22,7 @@ public class MainActivity extends InstrumentedActivity {
         Button secondViewButton = (Button) findViewById(R.id.secondViewButton);
         Button thirdViewButton = (Button) findViewById(R.id.thirdViewButton);
         Button forthViewButton = (Button) findViewById(R.id.forthViewButton);
+        Button fifthViewButton = (Button) findViewById(R.id.fifthViewButton);
 
         firstViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +48,6 @@ public class MainActivity extends InstrumentedActivity {
                 MainActivity.this.startActivity(intent);
             }
         });
-
         forthViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +56,16 @@ public class MainActivity extends InstrumentedActivity {
                 MainActivity.this.startActivity(intent);
             }
         });
+        fifthViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, HabitActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override

@@ -36,6 +36,7 @@
     <string name="connection_fail">网络连接失败</string>
     <string name="sign_in">登录</string>
     <string name="title_activity_login">登录</string>
+
     <string name="car_info">车辆信息</string>
     <string name="car_model">车型</string>
     <string name="licence_plate_number">车牌号</string>
@@ -46,6 +47,11 @@
     <string name="dummy_owner_name">XXX</string>
     <string name="dummy_obd_id">01234567890123456789</string>
 
+    <string name="oil_saving">节油</string>
+    <string name="fatigue_control">疲劳控制</string>
+    <string name="speed_habit">速度</string>
+    <string name="mileage">里程</string>
+    <string name="stability">稳定性</string>
 
 
 </resources>
