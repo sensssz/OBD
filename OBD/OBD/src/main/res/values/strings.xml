@@ -54,5 +54,11 @@
     <string name="mileage">里程</string>
     <string name="stability">稳定性</string>
 
+    <string name="dummy_oil_saving">33%</string>
+    <string name="dummy_fatigue_control">80%</string>
+    <string name="dummy_speed_habit">78%</string>
+    <string name="dummy_mileage">44%</string>
+    <string name="dummy_stability">80%</string>
+
 
 </resources>
