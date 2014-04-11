@@ -4,52 +4,44 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
 
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/first_view"
-        android:id="@+id/firstViewButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        />
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dial_imagebutton"
+            android:id="@+id/dialsViewButton"/>
 
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/second_view"
-        android:id="@+id/secondViewButton"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/firstViewButton"
-        android:layout_marginTop="30dp"
-       />
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/statisticchart_imagebutton"
+            android:id="@+id/statisticsChartViewButton"
+            />
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/carinfo_imagebutton"
+            android:id="@+id/carInfoViewButton"
+            />
 
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/third_view"
-        android:id="@+id/thirdViewButton"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/secondViewButton"
-        android:layout_marginTop="30dp"
-        />
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/habit_imagebutton"
+            android:id="@+id/habitViewButton"
+            />
 
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/forth_view"
-        android:id="@+id/forthViewButton"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/thirdViewButton"
-        android:layout_marginTop="30dp"
-         />
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="@string/fifth_view"
-        android:id="@+id/fifthViewButton"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/forthViewButton"
-        android:layout_marginTop="30dp"
-        />
+    </GridLayout>
+
+
+
+
+
+
 </RelativeLayout>

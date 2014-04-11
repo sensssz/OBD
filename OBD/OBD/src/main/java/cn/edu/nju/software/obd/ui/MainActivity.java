@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import cn.edu.nju.software.obd.R;
 import cn.jpush.android.api.InstrumentedActivity;
@@ -18,21 +19,12 @@ public class MainActivity extends InstrumentedActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button firstViewButton = (Button) findViewById(R.id.firstViewButton);
-        Button secondViewButton = (Button) findViewById(R.id.secondViewButton);
-        Button thirdViewButton = (Button) findViewById(R.id.thirdViewButton);
-        Button forthViewButton = (Button) findViewById(R.id.forthViewButton);
-        Button fifthViewButton = (Button) findViewById(R.id.fifthViewButton);
+        ImageButton dialsViewButton = (ImageButton) findViewById(R.id.dialsViewButton);
+        ImageButton statisticsChartViewButton = (ImageButton) findViewById(R.id.statisticsChartViewButton);
+        ImageButton carInfoViewButton = (ImageButton) findViewById(R.id.carInfoViewButton);
+        ImageButton habitViewButton = (ImageButton) findViewById(R.id.habitViewButton);
 
-        firstViewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, LoginActivity.class);
-                MainActivity.this.startActivity(intent);
-            }
-        });
-        secondViewButton.setOnClickListener(new View.OnClickListener() {
+        dialsViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
@@ -40,7 +32,7 @@ public class MainActivity extends InstrumentedActivity {
                 MainActivity.this.startActivity(intent);
             }
         });
-        thirdViewButton.setOnClickListener(new View.OnClickListener() {
+        statisticsChartViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
@@ -48,7 +40,7 @@ public class MainActivity extends InstrumentedActivity {
                 MainActivity.this.startActivity(intent);
             }
         });
-        forthViewButton.setOnClickListener(new View.OnClickListener() {
+        carInfoViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
@@ -56,7 +48,7 @@ public class MainActivity extends InstrumentedActivity {
                 MainActivity.this.startActivity(intent);
             }
         });
-        fifthViewButton.setOnClickListener(new View.OnClickListener() {
+        habitViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
